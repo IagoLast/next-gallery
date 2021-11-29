@@ -1,0 +1,77 @@
+.Tile {
+  --color: #261613;
+  padding-bottom: 100%;
+  background-color: var(--color);
+}
+
+.--color-navy {
+  --color: #092b40; /* Navy */
+}
+
+.--color-tomato {
+  --color: #bf2806;
+}
+
+.--color-dark-brown {
+  --color: #261613; /* Dark Brown */
+}
+
+.--color-orange {
+  --color: #f27507; /* Dark Orange */
+}
+
+.--color-tangerine {
+  --color: #f28705; /* Light Orange */
+}
+
+/* Arcs */
+.--arc-bl {
+  border-bottom-left-radius: 100%;
+}
+
+.--arc-br {
+  border-bottom-right-radius: 100%;
+}
+
+.--arc-tl {
+  border-top-left-radius: 100%;
+}
+
+.--arc-tr {
+  border-top-right-radius: 100%;
+}
+
+/* Triangles */
+.--triangle-bl {
+  background: linear-gradient(45deg, var(--color) 50%, transparent 50%);
+}
+
+.--triangle-tl {
+  background: linear-gradient(135deg, var(--color) 50%, transparent 50%);
+}
+
+.--triangle-tr {
+  background: linear-gradient(225deg, var(--color) 50%, transparent 50%);
+}
+
+.--triangle-br {
+  background: linear-gradient(315deg, var(--color) 50%, transparent 50%);
+}
+
+/* Matches */
+.--match-top {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+.--match-right {
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+.--match-bottom {
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+.--match-left {
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+}
