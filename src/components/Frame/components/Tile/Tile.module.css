@@ -2,7 +2,11 @@
   --color: #261613;
   padding-bottom: 100%;
   background-color: var(--color);
+  cursor: pointer;
+  transition: all .6s;
 }
+
+.--locked {}
 
 .--color-navy {
   --color: #092b40; /* Navy */
@@ -25,36 +29,36 @@
 }
 
 /* Arcs */
-.--arc-bl {
+.--arc-top {
   border-bottom-left-radius: 100%;
 }
 
-.--arc-br {
+.--arc-left {
   border-bottom-right-radius: 100%;
 }
 
-.--arc-tl {
+.--arc-bottom {
   border-top-left-radius: 100%;
 }
 
-.--arc-tr {
+.--arc-right {
   border-top-right-radius: 100%;
 }
 
 /* Triangles */
-.--triangle-bl {
+.--triangle-top {
   background: linear-gradient(45deg, var(--color) 50%, transparent 50%);
 }
 
-.--triangle-tl {
+.--triangle-left {
   background: linear-gradient(135deg, var(--color) 50%, transparent 50%);
 }
 
-.--triangle-tr {
+.--triangle-right {
   background: linear-gradient(225deg, var(--color) 50%, transparent 50%);
 }
 
-.--triangle-br {
+.--triangle-bottom {
   background: linear-gradient(315deg, var(--color) 50%, transparent 50%);
 }
 

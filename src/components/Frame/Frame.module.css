@@ -21,4 +21,6 @@
   padding: 3vw;
   resize: horizontal;
   width: 75vw;
+
+  transition: all 0.3s ease-in-out;
 }
