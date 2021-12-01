@@ -13,7 +13,7 @@ export interface ITileSpec {
   rotation: ITileRotation;
 }
 
-export type ITileType = "square" | "circle" | "triangle" | "match";
+export type ITileType = "square" | "circle" | "triangle" | "match" | "arc";
 export type ITileColor =
   | "color-100"
   | "color-200"
@@ -44,8 +44,8 @@ const frameService = {
   },
 
   generateRandomTile(): ITileSpec {
-    const type = ["match", "square", "circle", "triangle"][
-      Math.floor(Math.random() * 4)
+    const type = ["match", "square", "circle", "triangle", "arc"][
+      Math.floor(Math.random() * 5)
     ] as ITileType;
 
     const color = [
