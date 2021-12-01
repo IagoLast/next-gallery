@@ -13,8 +13,8 @@ describe("frame.service", () => {
 
       expect(def).toEqual({
         frames: [
-          { type: "match", color: "navy", rotation: "top" },
-          { type: "match", color: "navy", rotation: "top" },
+          { type: "match", color: "color-100", rotation: "top" },
+          { type: "match", color: "color-100", rotation: "top" },
         ],
       });
     });
@@ -23,16 +23,16 @@ describe("frame.service", () => {
       const def = frameService.generate({
         length: 3,
         frames: {
-          0: { type: "circle", color: "tangerine", rotation: "bottom" },
-          2: { type: "triangle", color: "navy", rotation: "left" },
+          0: { type: "circle", color: "color-200", rotation: "bottom" },
+          2: { type: "triangle", color: "color-300", rotation: "left" },
         },
       });
 
       expect(def).toEqual({
         frames: [
-          { type: "circle", color: "tangerine", rotation: "bottom" },
-          { type: "match", color: "navy", rotation: "top" },
-          { type: "triangle", color: "navy", rotation: "left" },
+          { type: "circle", color: "color-200", rotation: "bottom" },
+          { type: "match", color: "color-100", rotation: "top" },
+          { type: "triangle", color: "color-300", rotation: "left" },
         ],
       });
     });

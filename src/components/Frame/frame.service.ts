@@ -15,11 +15,12 @@ export interface ITileSpec {
 
 export type ITileType = "square" | "circle" | "triangle" | "match";
 export type ITileColor =
-  | "navy"
-  | "dark-brown"
-  | "orange"
-  | "tomato"
-  | "tangerine";
+  | "color-100"
+  | "color-200"
+  | "color-300"
+  | "color-400"
+  | "color-500";
+
 export type ITileRotation = "top" | "right" | "bottom" | "left";
 
 const frameService = {
@@ -47,9 +48,13 @@ const frameService = {
       Math.floor(Math.random() * 4)
     ] as ITileType;
 
-    const color = ["navy", "dark-brown", "orange", "tangerine", "tomato"][
-      Math.floor(Math.random() * 5)
-    ] as ITileColor;
+    const color = [
+      "color-100",
+      "color-200",
+      "color-300",
+      "color-400",
+      "color-500",
+    ][Math.floor(Math.random() * 5)] as ITileColor;
 
     const rotation = ["top", "right", "bottom", "left"][
       Math.floor(Math.random() * 4)

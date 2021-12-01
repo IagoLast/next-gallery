@@ -3,29 +3,28 @@
   padding-bottom: 100%;
   background-color: var(--color);
   cursor: pointer;
-  transition: all .6s;
+  transition: all 0.6s;
+  border-radius: min(var(--padding), 6px);
 }
 
-.--locked {}
-
-.--color-navy {
-  --color: #092b40; /* Navy */
+.--color-100 {
+  --color: var(--color-100);
 }
 
-.--color-tomato {
-  --color: #bf2806;
+.--color-200 {
+  --color: var(--color-200);
 }
 
-.--color-dark-brown {
-  --color: #261613; /* Dark Brown */
+.--color-300 {
+  --color: var(--color-300);
 }
 
-.--color-orange {
-  --color: #f27507; /* Dark Orange */
+.--color-400 {
+  --color: var(--color-400);
 }
 
-.--color-tangerine {
-  --color: #f28705; /* Light Orange */
+.--color-500 {
+  --color: var(--color-500);
 }
 
 /* Arcs */

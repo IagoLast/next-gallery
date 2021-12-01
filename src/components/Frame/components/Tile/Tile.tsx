@@ -16,7 +16,7 @@ export default function Tile(props: ITileProps) {
       className={cn({
         [style.Tile]: true,
         [style[`--${props.type}-${props.rotation}`]]: true,
-        [style[`--color-${props.color}`]]: true,
+        [style[`--${props.color}`]]: true,
         [style[`--locked`]]: props.isLocked,
       })}
     ></div>

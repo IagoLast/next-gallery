@@ -19,8 +19,25 @@
   min-width: calc(var(--pixel-min) * 6);
   overflow: hidden;
   padding: 3vw;
-  resize: horizontal;
   width: 75vw;
+  grid-gap: var(--padding);
 
   transition: all 0.3s ease-in-out;
+
+  --color-100: #092b40;
+  --color-200: #bf2806;
+  --color-300: #261613;
+  --color-400: #f27507;
+  --color-500: #f28705;
+
+  /* --color-100: #092b40;
+  --color-200: #067ebf;
+  --color-300: transparent;
+  --color-400: #07f222;
+  --color-500: #05f2b7; */
+}
+
+.Footer {
+  font-size: 1.5rem;
+  padding: 1rem 0;
 }

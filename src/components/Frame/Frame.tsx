@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tile from "./components/Tile/Tile";
 import style from "./Frame.module.css";
 import frameService, { ITileSpec } from "./frame.service";
@@ -7,29 +7,61 @@ const FRAME_LENGTH = 60;
 
 export default function Frame() {
   const [state, setState] = useState(() => ({
+    padding: 0,
     frozenTiles: {},
     length: FRAME_LENGTH,
     spec: frameService.generate({ length: FRAME_LENGTH }),
   }));
 
-  function setLength(e: React.ChangeEvent<HTMLInputElement>) {
-    const length = parseInt(e.target.value, 10);
-    setState((prevState) => ({
-      ...prevState,
-      length,
-      spec: frameService.generate({ length }),
-    }));
-  }
+  useEffect(() => {
+    window.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") {
+        return setState((s) => ({
+          ...s,
+          spec: frameService.generate({
+            length: s.length,
+            frames: s.frozenTiles,
+          }),
+        }));
+      }
+      if (e.key == "ArrowUp") {
+        return setState((s) => {
+          console.warn(s.length);
+          const length = s.length + 1;
+          return {
+            ...s,
+            length,
+            spec: frameService.generate({ length }),
+          };
+        });
+      }
 
-  function regenerate() {
-    setState((s) => ({
-      ...s,
-      spec: frameService.generate({
-        length: s.length,
-        frames: state.frozenTiles,
-      }),
-    }));
-  }
+      if (e.key == "ArrowDown") {
+        return setState((s) => {
+          console.warn(s.length);
+
+          const length = s.length - 1;
+          return {
+            ...s,
+            length,
+            spec: frameService.generate({ length }),
+          };
+        });
+      }
+      if (e.key == "ArrowRight") {
+        return setState((s) => {
+          document.body.style.setProperty("--padding", `${s.padding + 1}px`);
+          return { ...s, padding: s.padding + 1 };
+        });
+      }
+      if (e.key == "ArrowLeft") {
+        return setState((s) => {
+          document.body.style.setProperty("--padding", `${s.padding - 1}px`);
+          return { ...s, padding: s.padding - 1 };
+        });
+      }
+    });
+  }, []);
 
   function freezeTile(args: { index: number; spec: ITileSpec }) {
     setState((s) => ({
@@ -54,17 +86,9 @@ export default function Frame() {
           );
         })}
       </figure>
-      <div>
-        <input
-          type="range"
-          min="4"
-          max="240"
-          step="1"
-          value={state.length}
-          onChange={setLength}
-        />
-        <button onClick={regenerate}> RANDOM </button>
-      </div>
+      <footer className={style.Footer}>
+        Press arrow keys if feeling creative
+      </footer>
     </>
   );
 }
